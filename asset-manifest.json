@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/livio-testing/static/js/main.b10bba29.chunk.js",
+    "main.js.map": "/livio-testing/static/js/main.b10bba29.chunk.js.map",
+    "runtime-main.js": "/livio-testing/static/js/runtime-main.844f55f5.js",
+    "runtime-main.js.map": "/livio-testing/static/js/runtime-main.844f55f5.js.map",
+    "static/js/2.751f9796.chunk.js": "/livio-testing/static/js/2.751f9796.chunk.js",
+    "static/js/2.751f9796.chunk.js.map": "/livio-testing/static/js/2.751f9796.chunk.js.map",
+    "index.html": "/livio-testing/index.html",
+    "static/js/2.751f9796.chunk.js.LICENSE.txt": "/livio-testing/static/js/2.751f9796.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.844f55f5.js",
+    "static/js/2.751f9796.chunk.js",
+    "static/js/main.b10bba29.chunk.js"
+  ]
+}
