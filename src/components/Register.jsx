@@ -104,12 +104,15 @@ let Register = ({
                     )
                     .then((response) => {
                       let { user, test, otp } = response.data;
-                      setUser(user);
-                      setTest(test);
-                      setOtp(otp);
                       setLoading(false);
-                      history.push("/otp");
-                      // history.push("/test");
+                      if (!response.data.test) {
+                        history.push("/waitlist");
+                      } else {
+                        setUser(user);
+                        setTest(test);
+                        setOtp(otp);
+                        history.push("/otp");
+                      }
                     })
                     .catch((error) => {
                       setLoading(false);

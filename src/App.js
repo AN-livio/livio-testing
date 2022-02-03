@@ -12,6 +12,7 @@ import AllQuestions from "./components/AllQuestions";
 import AddQuestion from "./components/AddQuestion";
 import OtpCheck from "./components/OtpCheck";
 import CandidateDashboard from "./components/CandidateDashboard";
+import Waitlist from "./components/WaitList";
 let App = () => {
   let [user, setUser] = useState(null);
   let [test, setTest] = useState(null);
@@ -86,6 +87,10 @@ let App = () => {
               setTest={setTest}
               setOtp={setOtp}
             />
+          </Route>
+          <Route path="/waitlist">
+            <Navbar />
+            <Waitlist />
           </Route>
           <Route path="/">
             <Navbar />
