@@ -313,7 +313,7 @@ let CandidateDashboard = () => {
                 <th scope="row">{index + 1}</th>
                 <td>{emptyCheck(e.name)}</td>
                 <td>{emptyCheck(e.college)}</td>
-                <td>{emptyCheck(e.totalScore)?e.totalScore:0}</td>
+                <td>{emptyCheck(e.totalScore) ? e.totalScore : 0}</td>
                 <td>{emptyCheck(e.appliedFor)}</td>
                 <td>{emptyCheck(e.highestDegree)}</td>
                 <td>{emptyCheck(e.exp)}</td>
@@ -326,13 +326,7 @@ let CandidateDashboard = () => {
                   )}
                 </td>
                 <td>{emptyCheck(e.phone)}</td>
-                <td>
-                  {e.email && e.email != "NA" ? (
-                    <a href={`mailto:${e.email}`}>Click to Mail</a>
-                  ) : (
-                    ""
-                  )}
-                </td>
+                <td>{e.email && e.email != "NA" ? e.email : ""}</td>
               </tr>
             ))}
           </tbody>

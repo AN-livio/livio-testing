@@ -28,6 +28,7 @@ let UserScore = ({ user, testScore, hiringManagerEmail, jobPost }) => {
       email: user.email,
       individualScore: formattedScoreForApi,
       totalScore,
+      jobPost
     };
 
     if (hiringManagerEmail && validateEmail(hiringManagerEmail)) {
@@ -126,7 +127,6 @@ let UserScore = ({ user, testScore, hiringManagerEmail, jobPost }) => {
                                     email,
                                     resumeURL,
                                     hiringManagerEmail,
-                                    jobPost,
                                   }
                                 )
                                 .then(() => {
