@@ -100,6 +100,7 @@ let App = () => {
               setUser={setUser}
               setTest={setTest}
               setOtp={setOtp}
+              jobPost={jobPost}
             />
           </Route>
         </Switch>

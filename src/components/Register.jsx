@@ -13,6 +13,7 @@ let Register = ({
   setHiringManagerEmail,
   setOtp,
   setJobPost,
+  jobPost,
 }) => {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
@@ -100,6 +101,7 @@ let Register = ({
                         exp,
                         workStatus,
                         highestDegree,
+                        jobPost,
                       }
                     )
                     .then((response) => {
