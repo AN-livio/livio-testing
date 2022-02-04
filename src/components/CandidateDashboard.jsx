@@ -60,7 +60,7 @@ let CandidateDashboard = () => {
     el.appliedFor.split("+")
   );
 
-  let jobTitles = [];
+  let jobTitles = ["NA"];
 
   for (let el of intermediateJobTitles) {
     jobTitles.push(...el);
