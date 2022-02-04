@@ -52,9 +52,21 @@ let CandidateDashboard = () => {
     return el;
   });
 
-  let jobTitles = Array.from(
-    new Set([...renderedCandidates.map((el) => el.appliedFor), "NA"])
+  // For candidates who do not have appliedFor property in mongodb database
+  // mongoose add that property with default value when fetching
+  // So candidates who do not have appliedFor they have it with NA
+
+  let intermediateJobTitles = renderedCandidates.map((el) =>
+    el.appliedFor.split("+")
   );
+
+  let jobTitles = [];
+
+  for (let el of intermediateJobTitles) {
+    jobTitles.push(...el);
+  }
+
+  jobTitles = Array.from(new Set(jobTitles));
 
   renderedCandidates = renderedCandidates.filter((el) => {
     if (marks) return el.totalScore >= Number(marks);
@@ -62,7 +74,7 @@ let CandidateDashboard = () => {
   });
 
   renderedCandidates = renderedCandidates.filter((el) => {
-    if (jobTitle) return el.appliedFor == jobTitle;
+    if (jobTitle) return el.appliedFor.includes(jobTitle);
     else return true;
   });
 
@@ -314,7 +326,7 @@ let CandidateDashboard = () => {
                 <td>{emptyCheck(e.name)}</td>
                 <td>{emptyCheck(e.college)}</td>
                 <td>{emptyCheck(e.totalScore) ? e.totalScore : 0}</td>
-                <td>{emptyCheck(e.appliedFor)}</td>
+                <td>{emptyCheck(e.appliedFor).replaceAll("+", " ,")}</td>
                 <td>{emptyCheck(e.highestDegree)}</td>
                 <td>{emptyCheck(e.exp)}</td>
                 <td>{emptyCheck(e.workStatus)}</td>
